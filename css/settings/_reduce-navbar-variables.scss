@@ -1,0 +1,24 @@
+$reduce-animation-duration:            .24s !default;
+
+$reduce-navbar-padding:                15px !default;
+$reduce-navbar-height:                 64px !default;
+$reduce-navbar-bg:                     #d40e52 !default;
+
+$reduce-menu-width:                    225px !default;
+$reduce-breakpoint:                    768px !default;
+
+$reduce-menu-button-padding:           10px !default;
+$reduce-menu-button-color:             #fff !default;
+$reduce-menu-button-hover-color:       #fff !default;
+$reduce-menu-button-height:            $reduce-navbar-height !default;
+$reduce-menu-button-width:             50px !default;
+$reduce-menu-button-shadow-base-value: 10px !default;
+$reduce-menu-button-shadow-scale:      6 !default;
+$reduce-menu-button-shadow-height:     2px !default;
+$reduce-menu-button-shadow-width:      18px !default;
+
+// shortcuts
+$_rmbc: $reduce-menu-button-color;
+$_rmbhc: $reduce-menu-button-hover-color;
+$_rmbsbv: $reduce-menu-button-shadow-base-value;
+$_rmbss: $reduce-menu-button-shadow-scale;

@@ -1,0 +1,249 @@
+// reset
+* { box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+// base stucture
+.reduce__pusher, .reduce__container {
+    height: 100%;
+}
+
+.reduce__container {
+    overflow: hidden;
+    position: relative;
+
+    @media only screen and (min-width: $reduce-breakpoint) {
+        overflow: visible;
+        position: static;
+    }
+}
+
+.reduce__content {
+    position: absolute;
+    top: $reduce-navbar-height;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @media only screen and (min-width: $reduce-breakpoint) {
+        margin-top: $reduce-navbar-height;
+        position: static;
+
+        overflow: visible;
+    }
+}
+
+.reduce__pusher {
+    @media only screen and (max-width: $reduce-breakpoint) {
+        transform: translateX(0);
+        transition: all $reduce-animation-duration;
+    }
+}
+
+.reduce__cache {
+    transform: translateX(0);
+    transition: all $reduce-animation-duration;
+}
+
+.with-reduce-sidebar--left {
+    @media only screen and (max-width: $reduce-breakpoint) {
+        .reduce__cache {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            background-color: rgba(#000, .6);
+
+            cursor: pointer;
+        }
+
+        .reduce__pusher {
+            transform: translateX($reduce-menu-width);
+            transition: all $reduce-animation-duration;
+        }
+    }
+}
+
+.with-reduce-sidebar--right {
+    @media only screen and (max-width: $reduce-breakpoint) {
+        .reduce__cache {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            background-color: rgba(#000, .6);
+
+            cursor: pointer;
+        }
+
+        .reduce__pusher {
+            transform: translateX($reduce-menu-width * -1);
+            transition: all $reduce-animation-duration;
+        }
+    }
+}
+
+
+
+// navbar
+.reduce__navbar {
+    height: $reduce-navbar-height;
+
+    background-color: $reduce-navbar-bg;
+
+    color: #fff;
+    line-height: $reduce-navbar-height;
+
+    @media only screen and (min-width: $reduce-breakpoint) {
+        padding: 0 $reduce-navbar-padding;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+.reduce__menu {
+    width: $reduce-menu-width;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    background-color: darken($reduce-navbar-bg, 5%);
+
+    .item {
+        border-bottom: 1px solid $reduce-navbar-bg;
+        display: block;
+        height: 40px;
+
+        line-height: 40px;
+        text-align: center;
+
+        transition: all .3s;
+
+        &:hover {
+            text-decoration: none;
+
+            transition: all .3s;
+        }
+    }
+
+
+    &--left {
+        left: 0;
+
+        transform: translateX($reduce-menu-width * -1);
+    }
+
+    &--right {
+        right: 0;
+
+        transform: translateX($reduce-menu-width);
+    }
+
+    @media only screen and (min-width: $reduce-breakpoint) {
+        float: right;
+        position: static;
+        width: auto;
+
+        background-color: transparent;
+
+        transform: translateX(0);
+
+        .item {
+            border-bottom: none;
+            display: inline-block;
+            height: $reduce-navbar-height;
+            padding: 0 10px;
+
+            line-height: $reduce-navbar-height;
+        }
+    }
+
+    &--absolute {
+        width: $reduce-menu-width;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        background-color: darken($reduce-navbar-bg, 5%);
+
+        .item {
+            border-bottom: 1px solid $reduce-navbar-bg;
+            display: block;
+            height: 40px;
+
+            line-height: 40px;
+            text-align: center;
+
+            transition: all .3s;
+
+            &:hover {
+                text-decoration: none;
+
+                transition: all .3s;
+            }
+        }
+    }
+}
+
+.reduce__menu__btn {
+    display: block;
+    height: $reduce-menu-button-height;
+    position: relative;
+    width: $reduce-menu-button-width;
+
+    cursor: pointer;
+
+    // vous pouvez decommente le 2 lignes suivantes
+    // pendant la phase de developement pour
+    // avoir un repere visuel
+    // background-color: yellow;
+    // border: 1px solid red;
+
+    &::before {
+        box-shadow: 0 $_rmbsbv 0 $_rmbc, 0 ($_rmbsbv + ($_rmbss * 1)) 0 $_rmbc, 0 ($_rmbsbv + ($_rmbss * 2)) 0 $_rmbc;
+        height: $reduce-menu-button-shadow-height;
+        width: $reduce-menu-button-shadow-width;
+
+        position: absolute;
+        // adaptez ces 2 valeurs {top, left} si jamais vous faites de gros changement.
+        // cette manipulation permet de centre le pseudo element par
+        // rapport au parent.
+        top: 14px;
+        left: 15px;
+
+        content: '';
+    }
+
+    &:hover {
+        &::before {
+            box-shadow: 0 $_rmbsbv 0 $_rmbhc, 0 ($_rmbsbv + ($_rmbss * 1)) 0 $_rmbhc, 0 ($_rmbsbv + ($_rmbss * 2)) 0 $_rmbhc;
+        }
+    }
+
+    &--left {
+        float: left;
+    }
+
+    &--right {
+        float: right;
+    }
+
+    @media only screen and (min-width: $reduce-breakpoint) {
+        display: none;
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "reduce-navbar",
+  "version": "1.0.0",
+  "homepage": "https://github.com/gorvelyfab/reduce-navbar",
+  "authors": [
+    "Gorvely Tasinda <gorvelyfab@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
