@@ -5,6 +5,10 @@
   "authors": [
     "Gorvely Tasinda <gorvelyfab@gmail.com>"
   ],
+  "main": [
+    "src/css/reduce-navbar.scss",
+    "src/js/reduce-navbar.coffee"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
