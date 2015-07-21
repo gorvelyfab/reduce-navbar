@@ -1,9 +1,8 @@
-css/.sass-cache
-css/reduce-navbar.css
-css/reduce-navbar.css.map
-css/reduce-navbar.min.css
-js/maps/
-js/reduce-navbar.js
-js/reduce-navbar.min.js
+src/css/reduce-navbar.css
+src/css/reduce-navbar.css.map
+src/css/reduce-navbar.min.css
+src/js/maps/
+src/js/reduce-navbar.js
+src/js/reduce-navbar.min.js
 node_modules/
 bower_components/

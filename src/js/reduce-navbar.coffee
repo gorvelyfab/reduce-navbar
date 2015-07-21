@@ -1,4 +1,6 @@
-$(document).ready ->
+do ($ = window.jQuery) ->
+    'use strict'
+
     $reduceMenuStandard = $('#reduce__menu--standard')
     $body = $('body')
 
